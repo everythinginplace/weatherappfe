@@ -1,0 +1,40 @@
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #fafbfc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  max-width: 400px;
+}
+
+.city-input-box {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.city-input-box:focus {
+  border-color: #007acc;
+}
+
+.city-search-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #007acc;
+  color: #fff;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.city-search-btn:hover,
+.city-search-btn:focus {
+  background: #005f99;
+}

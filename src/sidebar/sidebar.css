@@ -1,0 +1,22 @@
+/* Style for hyperlinks that removes blue color and underline, 
+   but shows a distinct style for normal, hover, active, and visited states */
+
+a {
+  color: #616566;            /* Neutral dark color for default links */
+  text-decoration: none;  /* Remove underline */
+  transition: color 0.2s, background 0.2s;
+}
+
+a:visited {
+  color: #333;            /* Dimmer color for visited links */
+}
+
+a:hover {
+  color: #fff;            /* Light text on highlight */
+  outline: none;
+}
+
+a:active {
+  color: #fff;
+  background-color: #005f99; /* Slightly darker for active/clicked */
+}

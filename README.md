@@ -57,3 +57,20 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## TODO
+
+What's next?
+- Retain previous searches and show them as options for the user to quickly / easily search on. Ie when user makes a successful weather search (no point saving search values that result in errors), save the search value somehow, and then when the search component loads, retrieve the list of saved searches. Two possible ways:  
+    - at the client level, ie in the browser application data
+    - at the API level, ie handled entirely by the API:
+        - client will call API to get a list of saved searches
+        - API will save a successful search, either as a successful search happens, or client explicitly calls API and says 'save this search'. First way breaks the REST principle but saves an API call.
+- Improve search by city ui
+    - Validate search field (eg blank)
+
+## Tech Debt
+
+- Config (eg urls)
+- Logs
+- Write a url concat helper - this is a good one to help avoid issues where you 
