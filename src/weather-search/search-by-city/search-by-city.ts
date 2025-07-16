@@ -1,25 +1,34 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component,  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { WeatherSearchService } from './search-by-city.service';
+import { WeatherSearchService } from '../weather-search.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-search-by-city',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './search-by-city.html',
-  styleUrl: './search-by-city.css'
+  styleUrl: './search-by-city.css',
 })
 export class SearchByCity {
-  cityName: string = '';
+  cityName: string = 'Perth'; // Save me typing it
 
-  constructor(private weatherSearchService: WeatherSearchService) {}
+  weatherResult: any;
+
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private weatherSearchService: WeatherSearchService) {}
 
   onButtonClick() {
+    // Check we have a city name - proper validation would be better
     if (!this.cityName) {
       console.error('City name is required');
       return;
-    }    
-    this.weatherSearchService.searchWeatherByCity(this.cityName).subscribe((result) => {
+    }
+
+    this.weatherSearchService.weatherSummaryByCity(this.cityName).subscribe((result) => {
       console.log('Result:', result);
+      this.weatherResult = result;
+      this.cdr.detectChanges();
     });
   }
 }

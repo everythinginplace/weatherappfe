@@ -7,3 +7,10 @@
   />
   <button class="city-search-btn" (click)="onButtonClick()">Submit</button>
 </div>
+
+<div class="search-results" *ngIf="weatherResult">
+  <p><b>Date: </b>{{ weatherResult.date }}</p>
+  <p><b>Location: </b>{{ weatherResult.location }}</p>
+  <p><b>Temperature: </b>{{ weatherResult.temperatureC }} °C / {{ weatherResult.temperatureF }} °F</p>
+  <p><b>Summary: </b>{{ weatherResult.summary }}</p>
+</div>
